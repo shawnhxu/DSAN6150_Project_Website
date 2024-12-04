@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -131,6 +131,10 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
+    <a class="nav-link" href="./syndemic_analysis.html"> 
+<span class="menu-text">Syndemics</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./conclusion.html"> 
 <span class="menu-text">Conclusion</span></a>
   </li>  
@@ -139,7 +143,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="quarto-navbar-tools">
     <div class="dropdown">
       <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-github"></i></a>
-      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
             <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/gu-dsan6150/fall-2024-project-team-01">
             Github Repo
@@ -160,8 +164,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#project-introduction" id="toc-project-introduction" class="nav-link active" data-scroll-target="#project-introduction">Project Introduction</a></li>
-  <li><a href="#project-scope" id="toc-project-scope" class="nav-link" data-scroll-target="#project-scope">Project Scope</a></li>
+  <li><a href="#project-scope" id="toc-project-scope" class="nav-link active" data-scroll-target="#project-scope">Project Scope</a></li>
   </ul>
 </nav>
     </div>
@@ -188,15 +191,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p><br></p>
-<section id="project-introduction" class="level3">
-<h3 class="anchored" data-anchor-id="project-introduction">Project Introduction</h3>
-<p>Disease is far more complicated than the current condition of the United States medical system acknowledges. Treating the symptoms and the diagnosis so far has not been enough for creating sustainable healthy living conditions for all members and subgroups of the American population. Therefore, we must ask, what has gone overlooked in the healthcare system that continues to put people at risk?</p>
-<p>The American medical system and public health policies have not created enough room for underlying environmental factors that may impact health to be acknowledged. Socioeconomic status, gender, poverty status, immigration status, climate factors, the political system, and more, all play a role in the severity of health conditions for certain populations, and are catalysts and participants in the creation of syndemics. A syndemic is a phenomenon in which several health conditions cluster together or overlap within a population. These can be direct influences such as co-morbidities, or less apparent relationships like such underlying factors impacting a non-communicable disease.</p>
-<p>Syndemic research is a relatively new field, particularly regarding syndemics in the United States. Our project plans to combat this in two parts: a literature review and data analysis. We plan to further explore the type II diabetes syndemics occuring in the United States and aim to make recommendations as to what underlying factors are the most impactful on health.</p>
-</section>
+<p>The United States medical system has its fair share of places that could use improvement. It tends to focus more on treating symptoms rather than addressing underlying causes, and approach disproportionately benefits populations in positions of privilege who have more physical and financial access to health care. Additionally, most medical research and literature overlooks racial and gender minorities, which creates fundamental barriers to developing universal, equitable healthcare by overlooking how health can manifest differently in populations who are affected by different variables. These shortcomings highlight the need for a more inclusive and preventative healthcare system that addresses the root causes of health disparities.</p>
+<p>In particular, the medical system and public health policies in the United States have failed to adequately account for the environmental, social, and economic factors that significantly impact health outcomes. Socioeconomic status, gender, immigration status, climate change, and political systems all contribute to the severity of health conditions, often exacerbating existing health crises. This overlap of factors can lead to what is known as a “syndemic,” or a situation where multiple health conditions overlap and intensify within a population. These conditions may include direct co-morbidities or less obvious influences, such as how societal and environmental factors worsen non-communicable diseases like diabetes.</p>
+<p>Syndemic research is a relatively new field, particularly in the United States, and our project seeks to contribute to this emerging area of study. Our project is divided into two parts: a comprehensive literature review and a data analysis. We aim to explore the syndemic between type II diabetes and depression in the United States, focusing on the underlying factors that amplify diabetes. The literature suggests that depression and immigration status are key syndemic factors. Our literature review will delve deeper into these factors, guiding our subsequent research.</p>
 <section id="project-scope" class="level2">
 <h2 class="anchored" data-anchor-id="project-scope">Project Scope</h2>
-<p>Our project will explore the diabetes syndemics in the United States. We aim to explore what underlying psychosocial factors amplify diabetes and plan to do so using statistical analysis techniques such as multinomial logistic regression.</p>
+<p>Our project will explore the diabetes syndemics in the United States. We aim to explore what underlying psychosocial factors amplify diabetes and plan to do so using various survival analysis and statistical techniques.</p>
 
 
 </section>
@@ -281,6 +281,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -315,7 +333,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
