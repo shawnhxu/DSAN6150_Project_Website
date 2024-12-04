@@ -100,12 +100,12 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Literature Review</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./eda.html"> 
-<span class="menu-text">EDA</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./data.html"> 
 <span class="menu-text">Data</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./eda.html"> 
+<span class="menu-text">EDA</span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-survival-analysis" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -187,7 +187,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="demographic-data" class="level3">
 <h3 class="anchored" data-anchor-id="demographic-data">Demographic Data</h3>
 <p>To determine the demographic factors that have an association with type II diabetes diagnosis we looked at several variables in the NHANES demographic data file. The demographics data file had 8 demographic variables of the 29 columns in the dataframe. Of these 8, we chose to exclude age, marital status, and pregnancy status. We excluded marital status and pregnancy status because they do not necessarily remain the same before and after a hypothetical diabetes development. The remaining variables that we did examine were gender, race, country of birth, education level, and family income level.</p>
-<p>We generated Kaplan-Meier survival curves for each of these variables with the event being diabetes diagnosis and the time to event being the age at which the subject was diagnosed. Of the five variables, we found a significant difference in survival for race, gender, and country of birth at the p = 0.05 significance level. There was no significant difference in survival based on either of the two socioeconomic factors we analyzed: education level and family income.</p>
+<p>We generated Kaplan-Meier survival curves for each of these variables with the event being diabetes diagnosis and the time to event being the age at which the subject was diagnosed. Of the five variables, we found a significant difference in survival for race, gender, family income and country of birth at the p = 0.05 significance level. There was no significant difference in survival based on education level.</p>
 </section>
 <section id="dietary-data" class="level3">
 <h3 class="anchored" data-anchor-id="dietary-data">Dietary Data</h3>
