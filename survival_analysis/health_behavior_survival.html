@@ -4782,11 +4782,6 @@ vertical-align: -.125em;
 <section id="dietary-data-set-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="dietary-data-set-analysis">Dietary Data Set Analysis</h2>
 <p>In order to assess how the dietary variables from our data set impact the development of diabetes, we will conduct a survival analysis. The cleaned data has been merged with the concurrent diabetes data to form a new data frame for analysis. In the next few cells, this data frame is read and processed to prepare it for survival analysis. Categorical variables are ready for analysis. A list of these is created. Continuous variables are also put into a list, as these will require slightly more processing for the survival analysis to be conducted.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] NA  2  3  1  5  4  7  6 10  8 12 15 18 16 14  9 20 17 21 11 13 19</code></pre>
-</div>
-</div>
 <p>In the subsequent step, Kaplan-Meier survival curves were generated for each categorical variable in the dataset. The p-values associated with each variable, derived from log-rank tests, were annotated on the visualizations to evaluate the statistical significance of the relationship between the categorical variable and survival time.</p>
 <p>Among the categorical variables analyzed, only diet healthiness demonstrated statistically significant associations with survival time, yielding a p-value of p &lt; 0.001. These results suggest that the observed differences in survival distributions across dietary healthiness groups are unlikely to occur by random chance, providing strong evidence for a relationship between these factors and the timing of being informed of diabetes. This suggests that low dietary healthiness, as classified by this index, might increase the risk of developing diabetes.</p>
 <div class="cell">
@@ -4879,7 +4874,6 @@ vertical-align: -.125em;
 </div>
 </div>
 <p>Among these transformed variables, meals from fast food and pizza places had a p-value of p &lt; 0.001, indicating a highly significant relationship with the development of diabetes. Specifically, higher consumption of fast food or pizza may be associated with an earlier onset of diabetes, suggesting that dietary habits influence the timing and progression of the disease. These findings emphasize the potential impact of diet on health outcomes and the importance of dietary interventions in the prevention and management of diabetes.</p>
-<p>We now save the significant variables to a new CSV to look at them in concert with significant variables from other categories.</p>
 
 
 </section>
